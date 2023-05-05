@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ForgetComponent } from './components/forget/forget.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ResetPassComponent } from './components/reset-pass/reset-pass.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
