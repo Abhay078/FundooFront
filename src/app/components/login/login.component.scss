@@ -28,7 +28,7 @@
     margin:20px;
     border-radius: 10px;
     padding: 41px;
-    
+    line-height: 1rem;
 
 }
 div a{
@@ -46,4 +46,9 @@ form a:hover{
     justify-content: space-between;
     align-items: center;
     margin-top: 2.5rem;
+}
+span{
+    color: grey;
+    width: 100%;
+    font-size: 0.8rem;
 }
