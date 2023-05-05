@@ -4,10 +4,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "Google Sans","Noto Sans Myanmar UI",arial,sans-serif;
-}
-.logo{
-    width:100px;
-
+    line-height: 0.9rem;
 }
 .main{
     display: flex;
@@ -73,10 +70,12 @@ form a{
     font-weight: 600;
     font-size: 0.8rem;
     color: #3498db;
-    padding: 10px;
+    padding: 10px; 
+    padding-left: 0px;
 }
 form a:hover{
-    background-color: #dee8ee;
+    background-color: #e8ecee;
+    color: #0d66a1;
 }
 .b-link{
     width: 100%;
@@ -85,13 +84,7 @@ form a:hover{
     align-items: center;
     margin-top: 2.5rem;
 }
-#uname{
-    position: relative;
-}
-#uname label{
-    position: absolute;
-    right:0;
-    font-size: 0.8rem;
-    padding: 18px;
-}
+
+
+
 
