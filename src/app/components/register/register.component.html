@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="left">
-            <h1>Fundoo</h1>
+            <img src="\assets\images\fundoo-notes-logo.png" alt="Fundoo" class="logo">
             <h3>Create Your Google Account</h3>
 
             <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -12,17 +12,13 @@
                     <mat-form-field appearance="outline">
                         <mat-label>First name</mat-label>
                         <input matInput type="text" formControlName="firstName"/>
-                        <div *ngIf="submitted && registerForm.get('firstName')?.hasError('required')" class="invalid-data">
-                            First name is required
-                        </div>
+                        <mat-error>Enter Valid FirstName</mat-error>
                     </mat-form-field><br>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Last name</mat-label>
                         <input matInput type="text" formControlName="lastName">
-                        <div *ngIf="submitted && registerForm.get('lastName')?.hasError('required')" class="invalid-data">
-                            Last name is required
-                        </div>
+                        <mat-error>Enter Valid lastName</mat-error>
                     </mat-form-field>
                 </div>
 
@@ -30,9 +26,7 @@
                     <mat-form-field class="username" appearance="outline">
                         <mat-label>User name</mat-label>
                         <input matInput type="email" formControlName="email">
-                        <div *ngIf="submitted && registerForm.get('email')?.hasError('required')" class="invalid-data">
-                            Email is required
-                        </div>
+                        <mat-error>Enter valid Email</mat-error>
 
                     </mat-form-field>
                     <span>You can use letters,numbers & periods</span>
@@ -43,17 +37,13 @@
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput type="{{showPass ?'text':'password'}}" formControlName="password">
-                        <div *ngIf="submitted && registerForm.get('password')?.hasError('required')" class="invalid-data">
-                            Password is required
-                        </div>
+                        <mat-error>Enter valid Password</mat-error>
 
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
                         <input matInput type="password" formControlName="confirmPassword">
-                        <div *ngIf="submitted && registerForm.get('confirmPassword')?.hasError('required')" class="invalid-data">
-                            ConfirmPassword is required
-                        </div>
+                        <mat-error>Not Matching with password</mat-error>
                     </mat-form-field><br>
                 </div>
 
