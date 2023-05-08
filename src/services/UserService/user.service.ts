@@ -7,16 +7,44 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl:string=environment.baseUrl
+  baseUrl: string = environment.baseUrl
 
-  constructor(private httpService:HttpService) { }
+  constructor(private httpService: HttpService) { }
 
-  registration(data:{}){
-    let headers={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json'
+  registration(data: {}) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
       })
     }
-    return this.httpService.postMethod(this.baseUrl+'User/Register',data,false,headers)
+    return this.httpService.postMethod(this.baseUrl + 'User/Register', data, false, headers)
   }
+  login(data: {}) {
+    let headers = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.httpService.postMethod(this.baseUrl + 'User/Login', data, false, headers)
+  }
+  
+forget(data: string) {
+  let headers = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
+  return this.httpService.postMethod(this.baseUrl+`User/ForgetPassword?email=${data}`,{},false,headers)
+}
+
+reset(data: string) {
+  let headers = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+
+  }
+  return this.httpService.postMethod(this.baseUrl + 'User/ResetPassword', data, true, headers)
+}
+
 }
