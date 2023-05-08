@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/services/UserService/user.service';
 
 @Component({
   selector: 'app-reset-pass',
@@ -11,7 +12,7 @@ export class ResetPassComponent implements OnInit {
   resetForm!:FormGroup;
   showCheckbox=false;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
     this.resetForm=this.formBuilder.group({
@@ -25,7 +26,9 @@ export class ResetPassComponent implements OnInit {
       return;
     }
     else{
-      alert('Success');
+      let forgetdata=this.resetForm.value.password;
+      this.user.reset(forgetdata)
+      .subscribe((response)=>{console.log(response);})
     }
   }
 
