@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/services/UserService/user.service';
 
 @Component({
   selector: 'app-forget',
@@ -11,7 +12,7 @@ export class ForgetComponent implements OnInit {
   ForgetForm!:FormGroup;
 
 
-  constructor(private formbuilder:FormBuilder) { }
+  constructor(private formbuilder:FormBuilder,private user:UserService) { }
 
   ngOnInit(): void {
     this.ForgetForm=this.formbuilder.group({
@@ -23,7 +24,11 @@ export class ForgetComponent implements OnInit {
     if(this.ForgetForm.invalid){
       return;
     }
-    alert('Success!!');
+    else{
+      let forgetdata=this.ForgetForm.value.email;
+      this.user.forget(forgetdata)
+      .subscribe((response)=>{console.log(response);})
+    }
   }
 
 }
