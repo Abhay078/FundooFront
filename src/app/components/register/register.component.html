@@ -42,7 +42,7 @@
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput type="password" formControlName="confirmPassword">
+                        <input matInput type="{{showPass ?'text':'password'}}" formControlName="confirmPassword">
                         <mat-error>Not Matching with password</mat-error>
                     </mat-form-field><br>
                 </div>
