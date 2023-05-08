@@ -11,4 +11,5 @@ export class HttpService {
   postMethod(url: string, payload: {}, token: boolean, httpOption: any) {
     return this.http.post(url, payload, token && httpOption)
   }
+  
 }
