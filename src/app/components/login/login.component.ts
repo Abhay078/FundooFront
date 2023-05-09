@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/UserService/user.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   submitted=false;
   LoginForm!:FormGroup;
 
-  constructor(private formBuilder:FormBuilder,private user:UserService) { }
+  constructor(private formBuilder:FormBuilder,private user:UserService,private route:Router) { }
 
   ngOnInit(): void {
     this.LoginForm=this.formBuilder.group({
@@ -32,7 +33,9 @@ export class LoginComponent implements OnInit {
         "password":this.LoginForm.value.password
       }
       this.user.login(loginData).subscribe((response:any)=>{
-        console.log(response);
+        console.log(response.data);
+        localStorage.setItem('token',response.data)
+        this.route.navigateByUrl('/home/notes')
       })
 
     }
