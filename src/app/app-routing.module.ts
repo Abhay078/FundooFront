@@ -5,9 +5,9 @@ import { ForgetComponent } from './components/forget/forget.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { AddNoteComponent } from './components/add-note/add-note.component';
-import { DisplayNoteComponent } from './components/display-note/display-note.component';
-import { IconsComponent } from './components/icons/icons.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -15,7 +15,13 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forget',component:ForgetComponent},
   {path:'resetPassword/:token',component:ResetPassComponent},
-  {path:'home',component:DashboardComponent},
+  {path:'home',component:DashboardComponent,
+  children:[
+    {path:'notes',component:NotesComponent},
+    {path:'archive',component:ArchiveComponent},
+    {path:'trash',component:TrashComponent},
+  ]
+},
 ];
 
 @NgModule({
