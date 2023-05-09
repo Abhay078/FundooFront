@@ -13,24 +13,34 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ForgetComponent } from './components/forget/forget.component';
 import { ResetPassComponent } from './components/reset-pass/reset-pass.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { DisplayNoteComponent } from './components/display-note/display-note.component';
+import { IconsComponent } from './components/icons/icons.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     ForgetComponent,
-    ResetPassComponent
+    ResetPassComponent,
+    DashboardComponent,
+    AddNoteComponent,
+    DisplayNoteComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
+    ReactiveFormsModule,MatToolbarModule,
+    AppRoutingModule,MatSidenavModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
+    MatFormFieldModule,MatIconModule,
+    MatInputModule,MatListModule,
     MatButtonModule,
     MatCheckboxModule
   ],
