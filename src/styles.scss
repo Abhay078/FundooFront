@@ -1,11 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.invalid-data{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    color: red;
-    padding: 0.3rem;
+.logo{
+    width: 140px;
+    height: 95px;
+}
+
+fab.mat-accent, .mat-mini-fab.mat-accent {
+    color: #000000;
+}
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+div button:hover mat-icon{
+  background-color: grey;
+  transition: color 0.2s ease-out;
 }
