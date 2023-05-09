@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteServiceService } from 'src/services/NoteService/note-service.service';
 
 @Component({
   selector: 'app-add-note',
@@ -6,13 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-note.component.scss']
 })
 export class AddNoteComponent implements OnInit {
- isExpanded=false;
-  constructor() { }
+ isShow:boolean=false;
+ title:string='';
+ desc:string='';
+  constructor(private note:NoteServiceService) { }
 
   ngOnInit(): void {
   }
-  expandDiv(){
-this.isExpanded=true;
+  show(){
+    this.isShow=true;
+  }
+  close(){
+    this.isShow=false;
+    console.log(this.title,this.desc);
+    let data={
+      "title": this.title,
+      "description": this.desc,
+      "reminder": new Date(),
+      "archived": false,
+      "trash": false,
+      "isPinned": false
+    }
+    this.note.AddNote(data).subscribe((res)=>{
+      console.log(res);
+    })
   }
 
 }
