@@ -28,14 +28,7 @@
             <mat-icon>account_circle</mat-icon>
           </button>
     </div>
-      
-    
-        
-        
-       
-        
-        
-    
+  
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container"
@@ -43,18 +36,17 @@
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list class="nav-list">
-          <button mat-list-item routerLink="."><mat-icon class="side_nav">lightbulb_outline</mat-icon>Note</button>
+          <button mat-list-item routerLink="/home/notes"><mat-icon class="side_nav">lightbulb_outline</mat-icon>Note</button>
           <button mat-list-item routerLink="."><mat-icon class="side_nav">notifications</mat-icon>Reminders</button>
           <button mat-list-item routerLink="."><mat-icon class="side_nav">edit</mat-icon>Edit labels</button>
-          <button mat-list-item routerLink="."><mat-icon class="side_nav">archive</mat-icon>Archieve</button>
-          <button mat-list-item routerLink="."><mat-icon class="side_nav">delete</mat-icon>Trash</button>
+          <button mat-list-item routerLink="/home/archive"><mat-icon class="side_nav">archive</mat-icon>Archieve</button>
+          <button mat-list-item routerLink="/home/trash"><mat-icon class="side_nav">delete</mat-icon>Trash</button>
         </mat-nav-list>
       </mat-sidenav>
   
       <mat-sidenav-content>
         
-        <app-add-note></app-add-note>
-        <app-display-note></app-display-note>
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
