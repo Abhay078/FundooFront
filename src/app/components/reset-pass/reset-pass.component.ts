@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/services/UserService/user.service';
 
 @Component({
@@ -12,13 +13,15 @@ export class ResetPassComponent implements OnInit {
   resetForm!:FormGroup;
   showCheckbox=false;
 
-  constructor(private formBuilder:FormBuilder,private user:UserService) { }
-
+  constructor(private formBuilder:FormBuilder,private user:UserService,private activeRoute:ActivatedRoute) { }
+  token:any;
   ngOnInit(): void {
     this.resetForm=this.formBuilder.group({
       password:['',[Validators.required,Validators.minLength(8),Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8}/)]],
       confirmPassword:['',Validators.required]
     })
+    this.token = this.activeRoute.snapshot.paramMap.get('token');
+    console.log(this.token);
   }
   onSubmit(){
     this.submitted=true;
@@ -26,8 +29,12 @@ export class ResetPassComponent implements OnInit {
       return;
     }
     else{
-      let forgetdata=this.resetForm.value.password;
-      this.user.reset(forgetdata)
+      let forgetdata={
+        "newPassword": this.resetForm.value.password,
+        "confirmPassword":this.resetForm.value.confirmPassword
+      }
+      console.log(this.token);
+      this.user.reset(forgetdata,this.token)
       .subscribe((response)=>{console.log(response);})
     }
   }
