@@ -12,5 +12,8 @@ export class HttpService {
   postMethod(url: string, payload: {}, token: boolean, httpOption: any) {
     return this.http.post(this.baseUrl+url, payload, token && httpOption)
   }
+  getMethod(url:string,token:boolean,httpOption:any){
+    return this.http.get(this.baseUrl+url,token && httpOption)
+  }
   
 }
