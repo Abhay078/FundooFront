@@ -1,0 +1,85 @@
+*{
+    background-color: transparent;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    
+}
+div form{
+    display: flex;
+    flex-direction: column;
+    min-width: 38rem;
+    border-radius: 0.5rem;
+    border: solid transparent;
+    // box-shadow: 0 4px 8px black, 0 6px 20px 0 black;
+    box-shadow: 0 3px 5px rgba(0,0,0,.20);
+    border-width: 6px;
+    justify-content: center;
+    position: relative;
+    
+}
+.form-item{
+    padding: 10px 15px;
+    padding-bottom: 0px;
+    padding-right: 30px;
+}
+::ng-deep mat-form-field {
+    .mat-form-field-underline{
+        display:none;
+    }
+    .mat-form-field-outline{
+        border: none;
+    }
+    input{
+        background-color: transparent !important;
+        color: white;
+        padding: 0px;
+    }
+    
+    }
+mat-form-field{
+    width: 80%;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+.add_note_def{
+    width: 60%;
+    border: none;
+    padding: 14px;
+}
+.add_note_def:focus{
+    outline: none;
+    border: none;
+}  
+.btn_def{
+    display: flex;
+    justify-content: space-between;
+}
+.expanded{
+    display: none;
+}
+.shrink{
+    display: default;
+}
+.show{
+    display: block;
+}
+.hide{
+    display:none;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn a:hover{
+    background-color: rgb(235, 235, 235);
+}
+div button:hover{
+    background-color: grey;
+    transition: color 0.2s ease-out;
+}
+

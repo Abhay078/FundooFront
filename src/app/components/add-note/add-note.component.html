@@ -1,0 +1,47 @@
+<div class="main">
+    <form action="">
+        <div class="btn_def shrink" [ngClass]="{'hide':isExpanded}">
+            <input type="text" class="add_note_def" (click)="expandDiv()" placeholder="Take a note ...">
+            <div>
+                <button mat-mini-fab>
+                    <mat-icon>check_box</mat-icon>
+                </button>
+                <button mat-mini-fab>
+                    <mat-icon>brush</mat-icon>
+                </button>
+                <button mat-mini-fab>
+                    <mat-icon>insert_photo</mat-icon>
+                </button>
+            </div>
+
+
+
+        </div>
+<div class="expanded" [ngClass]="{'show':isExpanded}">
+        <div >
+            <mat-form-field class="form-item">
+                <input matInput placeholder="Title" required>
+            </mat-form-field>
+
+            <button mat-mini-fab>
+                <mat-icon>push_pin</mat-icon>
+            </button>
+        </div>
+
+        <br>
+
+        <mat-form-field class="form-item">
+            <input matInput placeholder="Take a note..." required>
+        </mat-form-field>
+
+
+        <div class="btn">
+            <app-icons></app-icons>
+            <div>
+                <a mat-flat-button>Close</a>
+            </div>
+            
+        </div>
+    </div>
+    </form>
+</div>
