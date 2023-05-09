@@ -1,0 +1,7 @@
+.container{
+    display: inline-block;
+}
+div button:hover{
+    background-color: grey;
+    transition: color 0.2s ease-out;
+}
