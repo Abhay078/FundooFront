@@ -21,6 +21,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import { NotesComponent } from './components/notes/notes.component';
+import { ArchiveComponent } from './components/archive/archive.component';
+import { TrashComponent } from './components/trash/trash.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +35,14 @@ import {MatListModule} from '@angular/material/list';
     DashboardComponent,
     AddNoteComponent,
     DisplayNoteComponent,
-    IconsComponent
+    IconsComponent,
+    NotesComponent,
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule,FormsModule,
     ReactiveFormsModule,MatToolbarModule,
     AppRoutingModule,MatSidenavModule,
     BrowserAnimationsModule,
