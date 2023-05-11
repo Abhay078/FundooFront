@@ -21,9 +21,7 @@
        
         <div *ngIf="isShow">
             <div>
-                <mat-form-field class="form-item">
-                    <input matInput placeholder="Title" [(ngModel)]="title" name="title">
-                </mat-form-field>
+                <input type="text" placeholder="Title" [(ngModel)]="title" name="title" class="form-item">
 
                 <button mat-mini-fab>
                     <mat-icon class="material-icons-outlined">push_pin</mat-icon>
@@ -31,10 +29,7 @@
             </div>
 
             <br>
-
-            <mat-form-field class="form-item">
-                <input matInput placeholder="Take a note..." [(ngModel)]="desc" name="description">
-            </mat-form-field>
+             <input type=text placeholder="Take a note..." [(ngModel)]="desc" name="description" class="form-item">
 
 
             <div class="btn" *ngIf="isShow">

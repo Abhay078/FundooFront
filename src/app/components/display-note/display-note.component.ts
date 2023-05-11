@@ -16,7 +16,7 @@ export class DisplayNoteComponent implements OnInit {
   openDialog(arr:any) {
     const dailogRef=this.dialog.open(UpdateNoteComponent,{
       width:'600px',
-      height:'245px',
+      height:'190px',
       data:arr
     });
     dailogRef.afterClosed().subscribe((result)=>{

@@ -22,8 +22,14 @@ div form{
 }
 .form-item{
     padding: 10px 15px;
-    padding-bottom: 0px;
-    padding-right: 30px;
+    padding-bottom: 9px;
+    padding-right: 35px;
+    border: none;
+    width: 85%;
+}
+.form-item:focus{
+    outline: none;
+    border:none;
 }
 ::ng-deep mat-form-field {
     .mat-form-field-underline{
