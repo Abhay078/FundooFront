@@ -22,6 +22,21 @@ export class TrashComponent implements OnInit {
     })
     
   }
+  forever_delete(id:number){
+      this.NoteService.Delete(id).subscribe((res)=>{
+        console.log(res);
+
+      },(error)=>{
+        console.log(error)
+      })
+  }
+  UnTrash(id:number){
+    this.NoteService.TrashNote(id).subscribe((res)=>{
+      console.log(res);
+   },(error)=>{
+     console.log(error);
+   })
+  }
   
 
 }
