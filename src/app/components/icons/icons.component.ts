@@ -13,12 +13,20 @@ export class IconsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  delete(id:number){
+  Trash(id:number){
     this.noteService.TrashNote(id).subscribe((res)=>{
        console.log(res);
     },(error)=>{
       console.log(error);
     })
+
+  }
+  Archive(id:number){
+    this.noteService.ArchiveNote(id).subscribe((res)=>{
+      console.log(res);
+   },(error)=>{
+     console.log(error);
+   })
 
   }
 
