@@ -1,0 +1,36 @@
+.form-item{
+    padding: 10px 15px;
+    padding-bottom: 0px;
+    padding-right: 10px;
+}
+::ng-deep mat-form-field {
+    .mat-form-field-underline{
+        display:none;
+    }
+    .mat-form-field-outline{
+        border: none;
+    }
+    input{
+        background-color: transparent !important;
+        color: white;
+        padding: 0px;
+    }
+    
+    }
+mat-form-field{
+    width: 80%;
+    padding-bottom: 0px;
+    background-color: transparent;
+}
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn a:hover{
+    background-color: rgb(235, 235, 235);
+}
+div button:hover{
+    background-color: grey;
+    transition: color 0.2s ease-out;
+}
