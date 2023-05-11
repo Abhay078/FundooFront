@@ -9,13 +9,14 @@ import { NoteServiceService } from 'src/services/NoteService/note-service.servic
 export class NotesComponent implements OnInit {
 
   constructor(private note:NoteServiceService) { }
-
+  Notes:any=[];
   ngOnInit(): void {
     this.getNote();
   }
   getNote(){
     this.note.GetNote().subscribe((res:any)=>{
       console.log(res);
+      this.Notes=res;
     })
   }
 }
