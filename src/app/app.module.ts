@@ -25,6 +25,9 @@ import { NotesComponent } from './components/notes/notes.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { FormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { UpdateNoteComponent } from './components/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,13 +41,14 @@ import { FormsModule } from '@angular/forms';
     IconsComponent,
     NotesComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,FormsModule,
+    HttpClientModule,FormsModule,MatSnackBarModule,
     ReactiveFormsModule,MatToolbarModule,
-    AppRoutingModule,MatSidenavModule,
+    AppRoutingModule,MatSidenavModule,MatDialogModule,
     BrowserAnimationsModule,
     MatFormFieldModule,MatIconModule,
     MatInputModule,MatListModule,
