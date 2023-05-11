@@ -1,31 +1,31 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
     <mat-toolbar class="example-toolbar">
-      <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      <button mat-icon-button (click)="snav.toggle()"><mat-icon class="material-icons-outlined">menu</mat-icon></button>
       <div class="header-first"><img src="\assets\images\fundoo-notes-logo.png" alt="Fundoo" class="logo"></div>
       <div class="search-bar">
         <button mat-mini-fab>
-          <mat-icon>search</mat-icon> 
+          <mat-icon class="material-icons-outlined">search</mat-icon> 
         </button>
         <input type="text" placeholder="Search"  class="search" >
       </div>
       
     <div class="header-second">
         <button mat-mini-fab>
-            <mat-icon>refresh</mat-icon>
+            <mat-icon class="material-icons-outlined">refresh</mat-icon>
           </button>
           <button mat-mini-fab>
-            <mat-icon>dns</mat-icon>
+            <mat-icon class="material-icons-outlined">dns</mat-icon>
           </button>
           <button mat-mini-fab>
-            <mat-icon>settings</mat-icon>
+            <mat-icon class="material-icons-outlined">settings</mat-icon>
           </button>
     </div>
     <div class="header-third">
         <button mat-mini-fab>
-            <mat-icon>apps</mat-icon>
+            <mat-icon class="material-icons-outlined">apps</mat-icon>
           </button>
           <button mat-mini-fab>
-            <mat-icon>account_circle</mat-icon>
+            <mat-icon class="material-icons-outlined">account_circle</mat-icon>
           </button>
     </div>
   
@@ -36,11 +36,11 @@
       <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
         <mat-nav-list class="nav-list">
-          <button mat-list-item routerLink="/home/notes"><mat-icon class="side_nav">lightbulb_outline</mat-icon>Note</button>
-          <button mat-list-item routerLink="."><mat-icon class="side_nav">notifications</mat-icon>Reminders</button>
-          <button mat-list-item routerLink="."><mat-icon class="side_nav">edit</mat-icon>Edit labels</button>
-          <button mat-list-item routerLink="/home/archive"><mat-icon class="side_nav">archive</mat-icon>Archieve</button>
-          <button mat-list-item routerLink="/home/trash"><mat-icon class="side_nav">delete</mat-icon>Trash</button>
+          <button mat-list-item routerLink="/home/notes"><mat-icon class="material-icons-outlined" class="side_nav" >lightbulb_outline</mat-icon>Note</button>
+          <button mat-list-item routerLink="."><mat-icon class="material-icons-outlined side_nav">notifications</mat-icon>Reminders</button>
+          <button mat-list-item routerLink="."><mat-icon class=" material-icons-outlined side_nav ">edit</mat-icon>Edit labels</button>
+          <button mat-list-item routerLink="/home/archive"><mat-icon class="material-icons-outlined side_nav ">archive</mat-icon>Archieve</button>
+          <button mat-list-item routerLink="/home/trash"><mat-icon class=" material-icons-outlined side_nav ">delete</mat-icon>Trash</button>
         </mat-nav-list>
       </mat-sidenav>
   
