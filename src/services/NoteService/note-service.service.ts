@@ -30,4 +30,14 @@ export class NoteServiceService {
   }
   return this.http.getMethod('Notes',true,header)
 }
+UpdateNote(data:any ,id:number){
+  let header={
+    headers:new HttpHeaders({
+    'Content-Type':'application/json',
+    'Authorization':'Bearer '+this.tokenValue
+  })
+
+}
+return this.http.putMethod(`Notes/Update${id}`,data,true,header)
+}
 }
