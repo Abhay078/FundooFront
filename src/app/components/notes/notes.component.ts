@@ -16,7 +16,10 @@ export class NotesComponent implements OnInit {
   getNote(){
     this.note.GetNote().subscribe((res:any)=>{
       console.log(res);
-      this.Notes=res;
+      this.Notes=res.filter((e:any)=>{
+        return e.archived===false && e.trash === false
+
+      });
     })
   }
 }

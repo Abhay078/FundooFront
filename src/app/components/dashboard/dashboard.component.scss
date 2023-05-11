@@ -54,7 +54,7 @@
     padding: 20px;
   }
   div button:hover{
-    background-color: grey;
+    background-color: rgb(187, 185, 185);
     transition: color 0.2s ease-out;
   }
   .header-first{
@@ -89,10 +89,10 @@
     justify-content: space-evenly;
   }
   mat-nav-list button:hover{
-    background-color: lightgrey;
+    background-color: rgb(187, 185, 185);
   }
   mat-nav-list button:hover mat-icon{
-    background-color: lightgrey;
+    background-color: rgb(187, 185, 185);
   }
 
   mat-nav-list button:active mat-icon{
