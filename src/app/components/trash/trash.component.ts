@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NoteServiceService } from 'src/services/NoteService/note-service.service';
 
 @Component({
   selector: 'app-trash',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrashComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private NoteService:NoteServiceService) { }
+  TrashNotes:any=[];
   ngOnInit(): void {
+    this.GetAllTrash();
   }
+  GetAllTrash(){
+    this.NoteService.GetNote().subscribe((res:any)=>{
+      console.log(res);
+      this.TrashNotes=res.filter((e:any)=>{
+           return e.trash === true
+      });
+    })
+    
+  }
+  
 
 }

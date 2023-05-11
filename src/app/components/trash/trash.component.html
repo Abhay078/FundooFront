@@ -1,1 +1,24 @@
-<p>trash works!</p>
+<div class="header">
+    <div class="main" *ngFor="let arr of TrashNotes">
+        <div class="container">
+            <div class="form-item desc">
+                <p>{{arr.title}}</p>
+
+            </div>
+            <div class="desc">
+                <p>{{arr.description}} </p>
+                <br>
+            </div>
+            <button mat-mini-fab>
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+            <button mat-mini-fab>
+                <mat-icon>restore_from_trash</mat-icon>
+            </button>
+
+
+        </div>
+
+
+    </div>
+</div>
