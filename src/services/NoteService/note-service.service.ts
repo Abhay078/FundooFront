@@ -40,4 +40,36 @@ UpdateNote(data:any ,id:number){
 }
 return this.http.putMethod(`Notes/Update${id}`,data,true,header)
 }
+
+TrashNote(id:number){
+  let header={
+    headers:new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization':'Bearer '+this.tokenValue
+  })
+}
+return this.http.putMethod(`Notes/Trash${id}`,{},true,header)
+}
+
+Delete(id:number){
+  let header={
+    headers:new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization':'Bearer '+this.tokenValue
+  })
+
+}
+return this.http.deleteMethod(`Notes/${id}`,true,header)
+}
+
+ArchiveNote(id:number){
+  let header={
+    headers:new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization':'Bearer '+this.tokenValue
+  })
+}
+return this.http.putMethod(`Notes/Archieve${id}`,{},true,header)
+}
+
 }
