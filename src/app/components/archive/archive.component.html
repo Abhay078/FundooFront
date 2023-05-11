@@ -1,1 +1,22 @@
-<p>archive works!</p>
+<div class="header">
+    <div class="main" >
+    <div class="container" *ngFor="let arr of ArchivedNotes">
+        <div class="form-item desc">
+            <p>{{arr.title}}</p>
+            <button mat-mini-fab >
+                <mat-icon class="material-icons-outlined">push_pin</mat-icon>
+              </button>
+        </div>
+        <div class="desc">
+            <p>{{arr.description}}</p>
+            <br>
+        </div>
+        <div class="icons">
+            <app-icons></app-icons>
+            
+        </div>
+    </div>
+    
+    
+    </div>
+    </div>
