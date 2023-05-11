@@ -1,7 +1,7 @@
 <div class="header">
 <div class="main" *ngFor="let arr of AllNotes">
-<div class="container" (click)="openDialog(arr)">
-    <div class="form-item desc">
+<div class="container" >
+    <div class="form-item desc" (click)="openDialog(arr)">
         <p>{{arr.title}}</p>
         <button mat-mini-fab >
             <mat-icon class="material-icons-outlined">push_pin</mat-icon>
@@ -12,10 +12,11 @@
         <br>
     </div>
     <div class="icons">
-        <app-icons></app-icons>
+        <app-icons [NoteId]="arr.noteId"></app-icons>
         
     </div>
 </div>
+
 
 </div>
 </div>
