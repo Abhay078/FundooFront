@@ -18,5 +18,8 @@ export class HttpService {
   putMethod(url:string,payload:{},token:boolean,httpOption:any){
     return this.http.put(this.baseUrl+url,payload,token && httpOption)
   }
+  deleteMethod(url:string,token:boolean,httpOption:any){
+    return this.http.delete(this.baseUrl+url,token && httpOption)
+  }
   
 }
