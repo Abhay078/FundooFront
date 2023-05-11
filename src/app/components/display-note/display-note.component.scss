@@ -2,12 +2,16 @@
     display: flex;
     gap: 15px;
 }
+.header{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .container{
     min-height: 38px;
     padding: 16px 16px 0 16px;
     width: 240px;
-    height: 156px;
+    height: auto;
     border-radius: 0.5rem;
     border: solid transparent;
     box-shadow: 0 3px 5px rgba(0,0,0,.20);
@@ -20,7 +24,7 @@
     }
     button{
         position: relative;
-        display: none;
+        visibility: hidden;
 
     }
 }
@@ -35,14 +39,14 @@
     word-wrap: break-word;
 }
 .container:hover button{
-    display: inline;
+    visibility: visible;
 
 }
 .icons{
-    display:none;
+    visibility: hidden;
 }
 .container:hover .icons{
-    display: block;
+    visibility: visible;
 }
 div button:hover{
     background-color: grey;
