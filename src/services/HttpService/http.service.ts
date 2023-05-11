@@ -15,5 +15,8 @@ export class HttpService {
   getMethod(url:string,token:boolean,httpOption:any){
     return this.http.get(this.baseUrl+url,token && httpOption)
   }
+  putMethod(url:string,payload:{},token:boolean,httpOption:any){
+    return this.http.put(this.baseUrl+url,payload,token && httpOption)
+  }
   
 }
