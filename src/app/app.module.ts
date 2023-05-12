@@ -28,6 +28,7 @@ import { FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     UpdateNoteComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,MatMenuModule,
     HttpClientModule,FormsModule,MatSnackBarModule,
     ReactiveFormsModule,MatToolbarModule,
     AppRoutingModule,MatSidenavModule,MatDialogModule,
