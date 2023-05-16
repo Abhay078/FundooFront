@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -20,7 +21,7 @@ const routes: Routes = [
     {path:'notes',component:NotesComponent},
     {path:'archive',component:ArchiveComponent},
     {path:'trash',component:TrashComponent},
-  ]
+  ],canActivate:[AuthenticationGuard]
 },
 ];
 
