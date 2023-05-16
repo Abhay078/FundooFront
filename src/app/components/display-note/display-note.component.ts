@@ -20,7 +20,8 @@ export class DisplayNoteComponent implements OnInit {
       data:arr
     });
     dailogRef.afterClosed().subscribe((result)=>{
-      console.log('the dailog is closed');
+      
+      console.log('the dailog is closed',result);
     })
   }
   
