@@ -29,6 +29,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { UpdateNoteComponent } from './components/update-note/update-note.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthguardServiceService } from 'src/services/AuthService/authguard-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatButtonModule,
     MatCheckboxModule
   ],
-  providers: [],
+  providers: [AuthguardServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
