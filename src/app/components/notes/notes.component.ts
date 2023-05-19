@@ -22,4 +22,5 @@ export class NotesComponent implements OnInit {
       });
     })
   }
+
 }
