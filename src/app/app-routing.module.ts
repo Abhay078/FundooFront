@@ -17,11 +17,12 @@ const routes: Routes = [
   {path:'forget',component:ForgetComponent},
   {path:'resetPassword/:token',component:ResetPassComponent},
   {path:'home',component:DashboardComponent,
+  canActivate:[AuthenticationGuard],
   children:[
     {path:'notes',component:NotesComponent},
     {path:'archive',component:ArchiveComponent},
     {path:'trash',component:TrashComponent},
-  ],canActivate:[AuthenticationGuard]
+  ]
 },
 ];
 
