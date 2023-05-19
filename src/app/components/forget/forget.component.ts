@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/services/UserService/user.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ForgetComponent implements OnInit {
   ForgetForm!:FormGroup;
 
 
-  constructor(private formbuilder:FormBuilder,private user:UserService) { }
+  constructor(private formbuilder:FormBuilder,private user:UserService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.ForgetForm=this.formbuilder.group({
@@ -22,12 +23,20 @@ export class ForgetComponent implements OnInit {
   onSubmit(){
     this.submitted=true;
     if(this.ForgetForm.invalid){
+      this._snackBar.open('Enter Valid Data','Close');
       return;
     }
     else{
       let forgetdata=this.ForgetForm.value.email;
       this.user.forget(forgetdata)
-      .subscribe((response)=>{console.log(response);})
+      .subscribe((response)=>{
+        console.log(response);
+        this._snackBar.open('Email Send Successfully','Close');
+      },(error)=>{
+        console.log(error)
+        console.log(error.status);
+        this._snackBar.open('Forget Password Failed','Close');
+      })
     }
   }
 
