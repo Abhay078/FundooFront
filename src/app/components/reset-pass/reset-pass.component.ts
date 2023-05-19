@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/services/UserService/user.service';
 
@@ -13,7 +14,7 @@ export class ResetPassComponent implements OnInit {
   resetForm!:FormGroup;
   showCheckbox=false;
 
-  constructor(private formBuilder:FormBuilder,private user:UserService,private activeRoute:ActivatedRoute) { }
+  constructor(private formBuilder:FormBuilder,private user:UserService,private activeRoute:ActivatedRoute,private _snackBar: MatSnackBar) { }
   token:any;
   ngOnInit(): void {
     this.resetForm=this.formBuilder.group({
@@ -26,6 +27,7 @@ export class ResetPassComponent implements OnInit {
   onSubmit(){
     this.submitted=true;
     if(this.resetForm.invalid){
+      this._snackBar.open('Enter valid Password Combination','Close')
       return;
     }
     else{
@@ -35,7 +37,13 @@ export class ResetPassComponent implements OnInit {
       }
       console.log(this.token);
       this.user.reset(forgetdata,this.token)
-      .subscribe((response)=>{console.log(response);})
+      .subscribe((response)=>{
+        console.log(response);
+        this._snackBar.open('Reset password Successfull','Close')
+      },(error)=>{
+        console.log(error);
+        this._snackBar.open('Reset password failed','Close')
+      })
     }
   }
 
