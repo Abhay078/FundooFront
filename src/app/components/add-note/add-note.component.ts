@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteServiceService } from 'src/services/NoteService/note-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class AddNoteComponent implements OnInit {
  isShow:boolean=false;
  title:string='';
  desc:string='';
-  constructor(private note:NoteServiceService) { }
+  constructor(private note:NoteServiceService,public _snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,10 @@ export class AddNoteComponent implements OnInit {
   close(){
     this.isShow=false;
     console.log(this.title,this.desc);
+    if(this.title =='' || this.desc==''){
+      this._snackbar.open('Please Enter some data','Close')
+      return;
+    }
     let data={
       "title": this.title,
       "description": this.desc,
@@ -29,7 +34,11 @@ export class AddNoteComponent implements OnInit {
       "isPinned": false
     }
     this.note.AddNote(data).subscribe((res)=>{
+      this._snackbar.open('Note Created Successfully','Close')
       console.log(res);
+    },(error)=>{
+      console.log(error);
+      this._snackbar.open('Adding Note Failed','Close')
     })
   }
 
