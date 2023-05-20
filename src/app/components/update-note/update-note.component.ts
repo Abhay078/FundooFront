@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { DisplayNoteComponent } from '../display-note/display-note.component';
 import { NoteServiceService } from 'src/services/NoteService/note-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -13,7 +14,7 @@ import { NoteServiceService } from 'src/services/NoteService/note-service.servic
 export class UpdateNoteComponent implements OnInit {
   NoteData:any;
 
-  constructor(public dialogRef:MatDialogRef<DisplayNoteComponent> ,@Inject(MAT_DIALOG_DATA) public data:any,private note:NoteServiceService) {
+  constructor(public dialogRef:MatDialogRef<DisplayNoteComponent> ,@Inject(MAT_DIALOG_DATA) public data:any,private note:NoteServiceService,public snacker:MatSnackBar) {
     console.log(data);
     this.NoteData=data;
     
@@ -27,9 +28,12 @@ export class UpdateNoteComponent implements OnInit {
       "description": this.NoteData.description
     }
     this.dialogRef.close();
+    
     this.note.UpdateNote(data,this.NoteData.noteId).subscribe((res)=>{
+      this.snacker.open('Note Updated Successfully','Close')
       console.log(res);
     },(error)=>{
+      this.snacker.open('Update Note Failed','Close')
       console.log(error);
       
     })
