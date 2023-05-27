@@ -1,14 +1,16 @@
 .main{
-    display: flex;
+    height: auto;
     gap: 15px;
 }
 .header{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
 }
 
 .container{
-    min-height: 38px;
+    // min-height: 38px;
     padding: 16px 16px 0 16px;
     width: 240px;
     height: auto;
@@ -43,10 +45,11 @@
 
 }
 .icons{
-    visibility: hidden;
+    opacity: 0;
+
 }
 .container:hover .icons{
-    visibility: visible;
+    opacity: 1;
 }
 div button:hover{
     background-color: rgb(187, 185, 185);
