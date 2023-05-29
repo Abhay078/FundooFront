@@ -1,24 +1,30 @@
 
-<div class="container">
-    <button mat-mini-fab *ngIf="componentName!='trash'">
+<div class="container" >
+    <button mat-mini-fab *ngIf="componentName!='trash'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">add_alert</mat-icon>
       </button>
-      <button mat-mini-fab *ngIf="componentName!='trash'">
+      <button mat-mini-fab *ngIf="componentName!='trash'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">person_add_alt</mat-icon>
       </button>
-      <button mat-mini-fab *ngIf="componentName!='trash'">
+      <button mat-mini-fab *ngIf="componentName!='trash'" [matMenuTriggerFor]="color" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">palette</mat-icon>
       </button>
-      <button mat-mini-fab *ngIf="componentName!='trash'">
+      <mat-menu #color="matMenu">
+        <div *ngFor="let color of colors" class="color-menu" >
+          <button (click)="SetColor(NoteId,color.code)"[style.background]="color.code" class="color_btn"></button>
+        </div>
+        
+      </mat-menu>
+      <button mat-mini-fab *ngIf="componentName!='trash'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">crop_original</mat-icon>
       </button>
-      <button mat-mini-fab (click)="Archive(NoteId)" *ngIf="componentName!='trash' && componentName!='archive'">
+      <button mat-mini-fab (click)="Archive(NoteId)" *ngIf="componentName!='trash' && componentName!='archive'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">archive</mat-icon>
       </button>
-      <button mat-mini-fab (click)="Archive(NoteId)" *ngIf="componentName === 'archive'">
+      <button mat-mini-fab (click)="Archive(NoteId)" *ngIf="componentName === 'archive'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">unarchive</mat-icon>
       </button>
-      <button mat-mini-fab [matMenuTriggerFor]="menu" *ngIf="componentName!='trash'">
+      <button mat-mini-fab [matMenuTriggerFor]="menu" *ngIf="componentName!='trash'" [style.background-color]="selectedColor">
         <mat-icon class="material-icons-outlined">more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -29,10 +35,10 @@
         <button mat-menu-item>Show checkboxes</button>
       </mat-menu>
 
-      <button mat-mini-fab (click)="forever_delete(NoteId)" *ngIf="componentName==='trash'">
+      <button mat-mini-fab (click)="forever_delete(NoteId)" *ngIf="componentName==='trash'" [style.background-color]="selectedColor">
         <mat-icon>delete_forever</mat-icon>
     </button>
-    <button mat-mini-fab (click)="UnTrash(NoteId)" *ngIf="componentName==='trash'">
+    <button mat-mini-fab (click)="UnTrash(NoteId)" *ngIf="componentName==='trash'" [style.background-color]="selectedColor">
         <mat-icon>restore_from_trash</mat-icon>
     </button>
 </div>

@@ -8,3 +8,18 @@ div button:hover{
 mat-icon{
     opacity: 0.54;
 }
+.color_btn{
+    border-radius: 50%;
+    border: none;
+    width: 29px;
+    height: 25px;
+    margin: 3px;
+}
+
+
+.color-menu{
+    display: inline;
+    :hover{
+        border: 2px solid;
+    }
+}
