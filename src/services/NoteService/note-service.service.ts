@@ -72,4 +72,15 @@ ArchiveNote(id:number){
 return this.http.putMethod(`Notes/Archieve${id}`,{},true,header)
 }
 
+UpdateColor(id:number,code:string){
+  
+  let header={
+    headers:new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization':'Bearer '+this.tokenValue
+  })
+}
+return this.http.putMethod(`Notes/Color${id}/%23`+`${code.substring(1)}`,{},true,header)
+
+}
 }
