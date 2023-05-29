@@ -1,9 +1,9 @@
 <div class="header">
-<div class="main" *ngFor="let arr of AllNotes">
-<div class="container" >
+<div class="main" *ngFor="let arr of AllNotes" >
+<div class="container" [style.background]="arr.backgroundColor">
     <div class="form-item desc" (click)="openDialog(arr)">
         <p>{{arr.title}}</p>
-        <button mat-mini-fab >
+        <button mat-mini-fab [style.background-color]="arr.backgroundColor">
             <mat-icon class="material-icons-outlined">push_pin</mat-icon>
           </button>
     </div>
@@ -12,7 +12,7 @@
         <br>
     </div>
     <div class="icons">
-        <app-icons [NoteId]="arr.noteId"></app-icons>
+        <app-icons [NoteId]="arr.noteId" [selectedColor]="arr.backgroundColor" (messageToDisplay)="receiveMessage($event)"></app-icons>
         
     </div>
 </div>
