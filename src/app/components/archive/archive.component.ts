@@ -22,5 +22,9 @@ export class ArchiveComponent implements OnInit {
       console.log(error);
     })
   }
+  receiveMessageDisplayToArchive($event:any){
+    console.log('archive received message '+$event);
+    this.GetArchiveNote();
+  }
 
 }
