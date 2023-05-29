@@ -7,7 +7,7 @@ import { NoteServiceService } from 'src/services/NoteService/note-service.servic
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-
+   newNote:any;
   constructor(private note:NoteServiceService) { }
   Notes:any=[];
   ngOnInit(): void {
@@ -21,6 +21,14 @@ export class NotesComponent implements OnInit {
 
       });
     })
+  }
+  receiveMessage($event:any){
+    this.newNote=$event;
+    this.getNote();
+  }
+  receiveMessageDisplayToNote($event:any){
+    console.log('note received message '+$event);
+    this.getNote();
   }
 
 }
