@@ -11,6 +11,7 @@ export class AddNoteComponent implements OnInit {
  isShow:boolean=false;
  title:string='';
  desc:string='';
+ @Output() newNote =new EventEmitter<any>();
   constructor(private note:NoteServiceService,public _snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
@@ -35,6 +36,7 @@ export class AddNoteComponent implements OnInit {
     }
     this.note.AddNote(data).subscribe((res)=>{
       this._snackbar.open('Note Created Successfully','Close')
+      this.newNote.emit(data);
       console.log(res);
     },(error)=>{
       console.log(error);
