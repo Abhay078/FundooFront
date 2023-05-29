@@ -22,10 +22,7 @@ export class NotesComponent implements OnInit {
       });
     })
   }
-  receiveMessage($event:any){
-    this.newNote=$event;
-    this.getNote();
-  }
+ 
   receiveMessageDisplayToNote($event:any){
     console.log('note received message '+$event);
     this.getNote();
