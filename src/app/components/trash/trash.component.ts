@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { NoteServiceService } from 'src/services/NoteService/note-service.service';
 
@@ -23,6 +24,10 @@ export class TrashComponent implements OnInit {
       });
     })
     
+  }
+  receiveMessageDisplayToTrash($event:any){
+    console.log('trash received message '+$event);
+    this.GetAllTrash();
   }
   
   
