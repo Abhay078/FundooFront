@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormBuilder, FormGroup,ReactiveFormsModule,Validators } from '@angular/forms';
 import { RegisterComponent } from './register.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { UserService } from 'src/services/UserService/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
@@ -8,7 +11,11 @@ describe('RegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegisterComponent ]
+      declarations: [ RegisterComponent ],
+      imports:[
+        ReactiveFormsModule,
+        MatSnackBarModule,HttpClientModule
+      ]
     })
     .compileComponents();
   });
