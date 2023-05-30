@@ -30,6 +30,7 @@ import { UpdateNoteComponent } from './components/update-note/update-note.compon
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatMenuModule} from '@angular/material/menu';
 import { AuthguardServiceService } from 'src/services/AuthService/authguard-service.service';
+import { SearchFilterPipe } from './pipe/search-filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { AuthguardServiceService } from 'src/services/AuthService/authguard-serv
     NotesComponent,
     ArchiveComponent,
     TrashComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,MatMenuModule,
