@@ -1,5 +1,5 @@
 <div class="header">
-<div class="main" *ngFor="let arr of AllNotes" >
+<div class="main" *ngFor="let arr of AllNotes | searchFilter:Search" >
 <div class="container" [style.background]="arr.backgroundColor">
     <div class="form-item desc" (click)="openDialog(arr)">
         <p>{{arr.title}}</p>
