@@ -6,7 +6,7 @@
         <button mat-mini-fab>
           <mat-icon class="material-icons-outlined">search</mat-icon> 
         </button>
-        <input type="text" placeholder="Search"  class="search" >
+        <input type="text" placeholder="Search"  class="search" (keyup)="searchNote($event)">
       </div>
       
     <div class="header-second">
