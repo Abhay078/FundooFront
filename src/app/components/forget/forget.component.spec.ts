@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ForgetComponent } from './forget.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('ForgetComponent', () => {
   let component: ForgetComponent;
@@ -8,7 +11,10 @@ describe('ForgetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ForgetComponent ]
+      declarations: [ ForgetComponent ],
+      imports:[
+        ReactiveFormsModule,HttpClientModule,MatSnackBarModule
+      ]
     })
     .compileComponents();
   });
