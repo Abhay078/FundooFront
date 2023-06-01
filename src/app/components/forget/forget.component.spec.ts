@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { ForgetComponent } from './forget.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -28,4 +28,19 @@ describe('ForgetComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should display the correct image',async(()=>{
+    let imageSrc:string=`/assets/images/fundoo-notes-logo.png`
+    let imageAlt:string='Fundoo'
+    const imgElement=fixture.nativeElement.querySelector('img')
+    expect(imgElement.src).toContain(imageSrc);
+    expect(imgElement.alt).toBe(imageAlt)
+  }))
+
+  it('should validate email',async(()=>{
+    let email=component.ForgetForm.controls['email']
+    email.setValue('abhaysri259@gmail.com')
+    fixture.detectChanges();
+    expect(email.valid).toBeTruthy();
+  }))
+  
 });
