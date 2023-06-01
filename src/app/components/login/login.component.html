@@ -12,9 +12,7 @@
                     <mat-form-field class="username" appearance="outline">
                         <mat-label>User name</mat-label>
                         <input matInput type="email" formControlName="email">
-                        <!-- <div *ngIf="submitted && LoginForm.get('email')?.hasError('required')" class="invalid-data">
-                            Email is required
-                        </div> -->
+
                         <mat-error>Email is required</mat-error>
 
                     </mat-form-field>
