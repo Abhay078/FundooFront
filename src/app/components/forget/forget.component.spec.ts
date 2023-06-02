@@ -28,7 +28,7 @@ describe('ForgetComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should display the correct image',async(()=>{
+  it('should display the correct logo image',async(()=>{
     let imageSrc:string=`/assets/images/fundoo-notes-logo.png`
     let imageAlt:string='Fundoo'
     const imgElement=fixture.nativeElement.querySelector('img')
